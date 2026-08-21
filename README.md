@@ -1,39 +1,114 @@
-# Dio Resumo Git e Github
+# 📚 Git e GitHub — Resumos e Prática
 
-Repositório para armazenar resumos sobre git e github do curso de versionamento de código com git e github da [Digital Inovation One](https://www.dio.me/en)
+Repositório de estudos sobre **Git, GitHub e versionamento de código**, desenvolvido a partir do curso da [Digital Innovation One (DIO)](https://www.dio.me/) e expandido com exemplos, exercícios e boas práticas usadas em projetos reais.
 
-## 📚 Documentação
-- [Documentação Git](https://git-scm.com/doc)
-- [Documentação Github](https://docs.github.com/)
+## 🎯 Objetivo
 
-## 💻 Dicas de Git e GitHub
+Mais do que reunir comandos, este repositório busca documentar o **modelo mental do Git**: entender onde cada alteração está, como o histórico é construído e como trabalhar de forma segura em equipe.
 
-| Comandos Organização de ambiente | Função |
-|----------------------------------|--------|
-|mkdir <nome>   | Cria um novo diretório|
-|cd <"caminho"> | Navega para o diretório desejado        |
-|ls ou dir      | Lista os arquivos e diretórios no local atual  |
-|pwd            | Mostra o caminho atual do diretório       |
-|rmdir <nome>   | Remove um diretório vazio|
-|touch <arquivo>| Cria um arquivo vazio (ex.: touch README.md)|
+```text
+Working Directory
+      ↓ git add
+  Staging Area
+      ↓ git commit
+Local Repository
+      ↓ git push
+Remote Repository (GitHub)
+```
 
-| Principais comandos Git| Função|
-|------------------------|-------|
-|`git init`| Inicializa um novo repositório Git no diretório atual.|
-|`git clone <url>`| Clona um repositório remoto para o seu computador.|
-|`git add <arquivo>`| Adiciona alterações de um arquivo ao staging area.|
-|`git commit -m "mensagem"`| Salva as alterações no repositório com uma mensagem|
-|`git status`| Mostra o estado atual do repositório (arquivos modificados, staged, etc.)|
-|`git pull`| Busca e mescla alterações do repositório remoto.|
-|`git push`| Envia suas alterações para o repositório remoto.|
-|`git log`| Exibe o histórico de commits.|
-|`git branch`| Lista ou cria branches (ex.: git branch <nome>).|
-|`git checkout <branch>`| Alterna para uma branch específica.|
+## 🧠 Trilha de estudo
 
+| # | Conteúdo | Resumo |
+|---|---|---|
+| 01 | [Introdução ao Git](aulas/01-introducao-ao-git.md) | Git x GitHub, repositório, commit, branch e staging area |
+| 02 | [Configuração e primeiros passos](aulas/02-configuracao-e-primeiros-passos.md) | identidade, `git init`, `git clone` e terminal |
+| 03 | [Commits e histórico](aulas/03-commits-e-historico.md) | status, diff, staging, commits e logs |
+| 04 | [Branches e merge](aulas/04-branches-e-merge.md) | criação, troca, integração e exclusão de branches |
+| 05 | [Remotos, GitHub e Pull Requests](aulas/05-remotos-github-e-pull-request.md) | fetch, pull, push, remotes e revisão |
+| 06 | [Conflitos e desfazer alterações](aulas/06-conflitos-e-desfazer-alteracoes.md) | conflitos, restore, revert e reset |
+| 07 | [Stash, rebase e boas práticas](aulas/07-stash-rebase-e-boas-praticas.md) | troca de contexto, histórico e práticas seguras |
 
-`
-<Hello World> / Praticando aprendizado Git e Github
-`
+## ⚡ Cheat sheet
 
-## Referências 🔎
-[Digital Innovation One](https://www.dio.me/en)
+### Inspeção
+
+```bash
+git status
+git diff
+git diff --staged
+git log --oneline
+git log --oneline --graph --all
+```
+
+### Repositório e commits
+
+```bash
+git init
+git clone <url>
+git add <arquivo>
+git commit -m "mensagem"
+```
+
+### Branches
+
+```bash
+git branch
+git switch -c <branch>
+git switch <branch>
+git merge <branch>
+git branch -d <branch>
+```
+
+### Remotos
+
+```bash
+git remote -v
+git fetch origin
+git pull
+git push -u origin <branch>
+```
+
+### Recuperação e contexto
+
+```bash
+git restore <arquivo>
+git restore --staged <arquivo>
+git revert <commit>
+git stash
+git stash pop
+```
+
+> `git checkout` continua válido, mas nos exemplos modernos deste material `git switch` é usado para branches e `git restore` para restaurar arquivos, deixando a intenção de cada comando mais clara.
+
+## 🧪 Pratique
+
+Acesse os [desafios práticos](desafios/README.md) para exercitar:
+
+- primeiro repositório e commits;
+- branches e merge;
+- publicação no GitHub e Pull Requests;
+- resolução de conflitos;
+- restauração e recuperação de alterações.
+
+## ✅ Boas práticas rápidas
+
+- Faça commits pequenos e com propósito claro.
+- Consulte `git status` e `git diff` antes de registrar alterações.
+- Evite commitar segredos, tokens e arquivos de ambiente.
+- Trabalhe em branches para mudanças relevantes.
+- Revise o diff antes de fazer merge.
+- Em histórico compartilhado, prefira `git revert` quando precisar desfazer um commit sem reescrever o histórico.
+
+## 📚 Documentação oficial
+
+- [Documentação do Git](https://git-scm.com/doc)
+- [GitHub Docs](https://docs.github.com/)
+- [GitHub Skills](https://skills.github.com/)
+
+## 💡 Sobre este repositório
+
+Este material começou como um exercício do curso de versionamento de código da DIO e evoluiu para um caderno de referência pessoal. A proposta é continuar refinando o conteúdo à medida que novos conceitos forem praticados em projetos reais.
+
+---
+
+Feito para aprender Git usando Git. 🚀
