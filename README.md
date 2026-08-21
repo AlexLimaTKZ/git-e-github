@@ -33,49 +33,49 @@ Remote Repository (GitHub)
 ### Inspeção
 
 ```bash
-git status
-git diff
-git diff --staged
-git log --oneline
-git log --oneline --graph --all
+git status                         # Mostra o estado atual dos arquivos e da staging area
+git diff                           # Exibe alterações ainda não adicionadas à staging area
+git diff --staged                  # Exibe alterações que já estão preparadas para o próximo commit
+git log --oneline                  # Mostra o histórico de commits em formato resumido
+git log --oneline --graph --all    # Mostra o histórico de todas as branches em formato de grafo
 ```
 
 ### Repositório e commits
 
 ```bash
-git init
-git clone <url>
-git add <arquivo>
-git commit -m "mensagem"
+git init                           # Inicializa um novo repositório Git no diretório atual
+git clone <url>                    # Cria uma cópia local de um repositório remoto
+git add <arquivo>                  # Adiciona um arquivo à staging area
+git commit -m "mensagem"           # Cria um commit com as alterações preparadas
 ```
 
 ### Branches
 
 ```bash
-git branch
-git switch -c <branch>
-git switch <branch>
-git merge <branch>
-git branch -d <branch>
+git branch                         # Lista as branches locais
+git switch -c <branch>             # Cria uma nova branch e muda para ela
+git switch <branch>                # Muda para uma branch existente
+git merge <branch>                 # Integra a branch informada à branch atual
+git branch -d <branch>             # Exclui uma branch local já integrada com segurança
 ```
 
 ### Remotos
 
 ```bash
-git remote -v
-git fetch origin
-git pull
-git push -u origin <branch>
+git remote -v                      # Lista os repositórios remotos e suas URLs
+git fetch origin                   # Baixa referências e commits do remoto sem integrar alterações
+git pull                           # Baixa e integra alterações da branch remota acompanhada
+git push -u origin <branch>        # Envia a branch ao remoto e define seu upstream
 ```
 
 ### Recuperação e contexto
 
 ```bash
-git restore <arquivo>
-git restore --staged <arquivo>
-git revert <commit>
-git stash
-git stash pop
+git restore <arquivo>              # Descarta alterações não adicionadas de um arquivo
+git restore --staged <arquivo>     # Remove um arquivo da staging area sem apagar suas alterações
+git revert <commit>                # Cria um novo commit que desfaz os efeitos de outro commit
+git stash                          # Guarda temporariamente alterações não commitadas
+git stash pop                      # Restaura o stash mais recente e o remove da lista
 ```
 
 > `git checkout` continua válido, mas nos exemplos modernos deste material `git switch` é usado para branches e `git restore` para restaurar arquivos, deixando a intenção de cada comando mais clara.
